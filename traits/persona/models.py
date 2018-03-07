@@ -1,4 +1,6 @@
 from django.db import models
+from django.forms import ModelForm
+from django.forms import TextInput
 
 # Create your models here.
 
@@ -48,4 +50,17 @@ class Comentarios(models.Model):
         on_delete = models.CASCADE,
     )
     confirmado = models.BooleanField()
+
+##################################################################################
+##              FORMS CREADOS DE LOS MODELOS                                    ##
+##################################################################################
+class personaForm(ModelForm):
+    class Meta:
+        model = Persona
+        fields = '__all__'
+        widgets = {
+            'fecha_nacimiento':TextInput(attrs={
+                'class':'datepicker',
+            })
+        }
     
