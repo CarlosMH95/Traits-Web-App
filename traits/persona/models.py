@@ -54,13 +54,18 @@ class Comentarios(models.Model):
 ##################################################################################
 ##              FORMS CREADOS DE LOS MODELOS                                    ##
 ##################################################################################
-class personaForm(ModelForm):
+
+
+# class personaForm(ModelForm):
+#     class Meta:
+#         model = Persona
+#         fields = '__all__'
+#         widgets = {
+#             'fecha_nacimiento':DateTimeInput(attrs={
+#                 'class':'datetime-input',
+#             })
+#         }
+class comentariosForm(ModelForm):
     class Meta:
-        model = Persona
-        fields = '__all__'
-        widgets = {
-            'fecha_nacimiento':TextInput(attrs={
-                'class':'datepicker',
-            })
-        }
-    
+        model = Comentarios
+        fields = ['titulo', 'contenido', 'img', 'confirmado']
