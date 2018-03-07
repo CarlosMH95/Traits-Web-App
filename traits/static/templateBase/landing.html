@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Traits</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Mi lista</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Mis Grupos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>  
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Traits Tracker</h1>
+            <p>
+                    a ley queda establecida cuando se promulga.
+
+                    8    § 1. Las leyes eclesiásticas universales se promulgan mediante su publicación en el Boletín oficial Acta Apostolicae Sedis, a no ser que, en casos particulares se hubiera prescrito otro modo de promulgación; y entran en vigor transcurridos tres meses a partir de la fecha que indica el número correspondiente de los Acta, a no ser que obliguen inmediatamente por la misma naturaleza del asunto, o que en la misma ley se establezca especial y expresamente una vacación más larga o más breve.
+                    
+                     § 2. Las leyes particulares se promulgan según el modo determinado por el legislador, y comienzan a obligar pasado un mes desde el día que fueron promulgadas, a no ser que en la misma ley se establezca otro plazo.
+                    
+                    9    Las leyes son para los hechos futuros, no para los pasados, a no ser que en ellas se disponga algo expresamente para éstos.
+                    
+                    10   Se han de considerar invalitantes o inhabilitantes tan sólo aquellas leyes en las que expresamente se establece que un acto es nulo o una persona es inhábil.
+                    
+                    11   Las leyes meramente eclesiásticas obligan a los bautizados en la Iglesia católica y a quienes han sido recibidos en ella, siempre que tengan uso de razón suficiente y, si el derecho no dispone expresamente otra cosa, hayan cumplido siete años.
+                    
+                     12   § 1. Las leyes universales obligan en todo el mundo a todos aquellos para quienes han sido dadas.
+                    
+                     § 2. Quedan eximidos de las leyes universales que no están vigentes en un determinado territorio todos aquellos que de hecho se encuentran en ese territorio.
+                    
+                     § 3. Las leyes promulgadas para un territorio peculiar obligan, sin perjuicio de lo que se prescribe en el ⇒ c. 13, a aquellos para quienes han sido dadas, si tienen allí su domicilio o cuasidomicilio y viven también de hecho en ese lugar.
+                    
+                    13   § 1. Las leyes particulares no se presumen personales, sino territoriales, a no ser que conste otra cosa.
+                    
+                     § 2. Los transeúntes no están sometidos:
+                    
+                    1  a las leyes particulares de su territorio cuando se encuentran fuera de él, a no ser que su transgresión cause daño en su propio territorio o se trate de leyes personales;
+                    
+                    2  ni a las leyes del territorio en el que se encuentran, exceptuadas las que miran a la tutela del orden público, determinan las formalidades que han de observarse en los actos, o se refieren a las cosas inmuebles situadas en el territorio.
+                    
+                     § 3. Los vagos están obligados por las leyes, tanto universales como particulares, que estén vigentes en el lugar donde ellos se encuentran.
+                    
+                    14   Las leyes, aunque sean invalidantes o inhabilitantes, no obligan en la duda de derecho; en la duda de hecho, pueden los Ordinarios dispensar de las mismas, con tal de que, tratándose de una dispensa reservada, suela concederla la autoridad a quien se reserva.
+                    
+                    15   § 1. La ignorancia o el error acerca de las leyes invalidantes o inhabilitantes no impiden su eficacia, mientras no se establezca expresamente otra cosa.
+                    
+                     § 2. No se presume la ignorancia o el error acerca de una ley, de una pena, de un hecho propio, o de un hecho ajeno notorio; se presume, mientras no se pruebe lo contrario, acerca de un hecho ajeno no notorio.
+                    
+                    16   § 1. Interpretan auténticamente las leyes el legislador y aquél a quien éste hubiere encomendado la potestad de interpretarlas auténticamente.
+                    
+                     § 2. La interpretación auténtica manifestada en forma de ley tiene igual fuerza que la misma ley, y debe promulgarse; tiene efecto retroactivo si solamente aclara palabras de la ley de por sí ciertas; pero si coarta la ley o la extiende o explica la que es dudosa, no tiene efecto retroactivo.
+                    
+                     § 3. Pero la interpretación hecha por sentencia judicial o acto administrativo en un caso particular no tiene fuerza de ley, y sólo obliga a las personas y afecta a las cosas para las que se ha dado.
+                    
+                    17   Las leyes eclesiásticas deben entenderse según el significado propio de las palabras, considerado en el texto y en el contexto; si resulta dudoso y obscuro se ha de recurrir a los lugares paralelos, cuando los haya, al fin y circunstancias de la ley y a la intención del legislador.
+                    
+                    18   Las leyes que establecen alguna pena, coartan el libre ejercicio de los derechos, o contienen una excepción a la ley se deben interpretar estrictamente.
+                    
+                    19   Cuando, sobre una determinada materia, no exista una prescripción expresa de la ley universal o particular o una costumbre, la causa, salvo que sea penal, se ha de decidir atendiendo a las leyes dadas para los casos semejantes, a los principios generales del derecho aplicados con equidad canónica, a la jurisprudencia y práctica de la Curia Romana, y a la opinión común y constante de los doctores.
+                    
+                    20   La ley posterior abroga o deroga a la precedente, si así lo establece de manera expresa, o es directamente contraria a la misma, u ordena completamente la materia que era objeto de la ley anterior; sin embargo, la ley universal no deroga en nada el derecho particular ni el especial, a no ser que se disponga expresamente otra cosa en el derecho.
+                    
+                    21   En caso de duda, no se presume la revocación de la ley precedente, sino que las leyes posteriores se han de comparar y, en la medida de lo posible, conciliarse con las anteriores.
+                    
+                    22   Las leyes civiles a las que remite el derecho de la Iglesia, deben observarse en derecho canónico con los mismos efectos, en cuanto no sean contrarias al derecho divino ni se disponga otra cosa en el derecho canónico.
+            </p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+    </div>  
+</body>
+
+</html>
