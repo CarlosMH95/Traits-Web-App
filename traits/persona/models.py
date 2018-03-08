@@ -38,7 +38,10 @@ class Rasgos(models.Model):
 
     # caracteristicas = models.CharField(max_length=5, choices=CARACTERISTICAS)
     tipo = models.CharField(max_length=4, choices=TIPO)
-
+    persona = models.ForeignKey(
+        'Persona',
+        on_delete = models.CASCADE,
+    )
 
 
 class Comentarios(models.Model):
@@ -52,19 +55,15 @@ class Comentarios(models.Model):
     confirmado = models.BooleanField()
 
 ##################################################################################
-##              FORMS CREADOS DE LOS MODELOS                                    ##
+##                      FORMS CREADOS DE LOS MODELOS                            ##
 ##################################################################################
 
 
-# class personaForm(ModelForm):
-#     class Meta:
-#         model = Persona
-#         fields = '__all__'
-#         widgets = {
-#             'fecha_nacimiento':DateTimeInput(attrs={
-#                 'class':'datetime-input',
-#             })
-#         }
+class personaForm(ModelForm):
+    class Meta:
+        model = Persona
+        fields = '__all__'
+
 class comentariosForm(ModelForm):
     class Meta:
         model = Comentarios
