@@ -70,9 +70,12 @@ def crear_comentario_persona(request):
 def eliminar_rasgo(request):
     pass
 
-def eliminar_comentario(request):
+def eliminar_comentario(request, comentario_id):
+    pass
+    
+def info_comentario(request, comentario_id):
     pass
 
-def modificar_comentario(request):
+def modificar_comentario(request, comentario_id):
     pass
 
