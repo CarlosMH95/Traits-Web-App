@@ -15,7 +15,7 @@ def index(request):
     data = {
         'personas':personas
     }
-    template = 'persona/index.html'
+    template = 'persona/base.html'
     return render(request, template, data)
 '''
 Funcion:    crear_persona
@@ -72,7 +72,7 @@ def eliminar_rasgo(request):
 
 def eliminar_comentario(request, comentario_id):
     pass
-    
+
 def info_comentario(request, comentario_id):
     pass
 
