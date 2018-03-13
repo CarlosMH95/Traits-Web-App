@@ -38,6 +38,7 @@ class Rasgos(models.Model):
 
     # caracteristicas = models.CharField(max_length=5, choices=CARACTERISTICAS)
     tipo = models.CharField(max_length=4, choices=TIPO)
+    nombre = models.CharField(max_length= 100, default=None)
     persona = models.ForeignKey(
         'Persona',
         on_delete = models.CASCADE,
@@ -68,3 +69,8 @@ class comentariosForm(ModelForm):
     class Meta:
         model = Comentarios
         fields = ['titulo', 'contenido', 'img', 'confirmado']
+
+class rasgosForm(ModelForm):
+    class Meta:
+        model = Rasgos
+        fields='__all__'

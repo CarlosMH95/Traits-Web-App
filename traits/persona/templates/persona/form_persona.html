@@ -5,7 +5,10 @@
 {% bootstrap_messages %}
 
 {% block content %}
-
+<div class="jumbotron text-center">
+        <h1>Formulario de persona</h1>
+        <p>Formulario para ingreso de personas  </p>
+    </div>
 <form role="form" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}

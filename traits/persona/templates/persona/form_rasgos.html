@@ -5,7 +5,10 @@
 {% bootstrap_messages %}
 
 {% block content %}
-
+<div class="jumbotron text-center">
+        <h1>Ingreso de Rasgos</h1>
+        <p>Formulario para el ingreso de rasgos</p>
+    </div>
 <form role="form" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
