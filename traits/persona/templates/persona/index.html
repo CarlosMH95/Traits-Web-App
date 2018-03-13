@@ -1,4 +1,8 @@
-{% extends "base.html" %}
+{% extends "persona/base.html" %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 {% block content %}
 <div id="page-wrapper">
         <div class="row">
@@ -14,7 +18,7 @@
                         </div>
                     {% endif %}
                 </div>
-</div>
+        </div>
     <div class="jumbotron text-center">
         <h1>Listado de personas y Rasgos</h1>
         <p>Aqui van a estar las personas eh eh eh</p>
@@ -33,6 +37,20 @@
                 <h3>Columna 3 no se que poner</h3>
                 <p>Le pongo un lorem ipsum buenaso por que no se que va a ir en esta Columna</p>
             </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Crear Persona</h3>
+                    <a href="{% url 'crear_p' %}" role="button" class="btn btn-info btn-lg">Crear</a>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Crear Rasgos</h3>
+                    <button type="button" class="btn btn-info btn-lg">Crear</button>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Nada</h3>
+                    <button type="button" class="btn btn-info btn-lg">Nada</button>
+                </div>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@ def index(request):
     data = {
         'personas':personas
     }
-    template = 'persona/base.html'
+    template = 'persona/index.html'
     return render(request, template, data)
 '''
 Funcion:    crear_persona

@@ -3,12 +3,12 @@ from django.urls import path, include
 from persona import views as views_persona
 
 urlpatterns = [
-    path('index', views_persona.index),
+    path('index', views_persona.index, name="index"),
     #Personas
-    path('crear/', views_persona.crear_persona),
-    path('info/<int:persona_id>/', views_persona.info_persona),
-    path('eliminar/persona/<int:persona_id>/', views_persona.eliminar_persona),
-    path('modificar/persona/<int:persona_id>/', views_persona.modificar_persona),
+    path('crear/', views_persona.crear_persona, name="crear_p"),
+    path('info/<int:persona_id>/', views_persona.info_persona, name="info_p"),
+    path('eliminar/persona/<int:persona_id>/', views_persona.eliminar_persona, name="eliminar_p"),
+    path('modificar/persona/<int:persona_id>/', views_persona.modificar_persona, name="mod_p"),
     #Comentarios
     path('crear/comentario/', views_persona.crear_comentario_persona),
     path('info/<int:comentario_id>/', views_persona.info_comentario),
