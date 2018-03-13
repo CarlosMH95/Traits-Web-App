@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'persona',
     'traits',
     'grupo',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [
