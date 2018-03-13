@@ -1,6 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
-from django.forms import TextInput
+from django.forms import TextInput, DateInput
 
 # Create your models here.
 
@@ -64,6 +64,9 @@ class personaForm(ModelForm):
     class Meta:
         model = Persona
         fields = '__all__'
+        widgets = {
+            'fecha_nacimiento' : DateInput(),
+        }
 
 class comentariosForm(ModelForm):
     class Meta:

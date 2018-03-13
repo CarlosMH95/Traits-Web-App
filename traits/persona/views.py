@@ -41,7 +41,7 @@ def crear_persona(request):
     return render(request,'persona/form_persona.html', context)
 
 def eliminar_persona(request, persona_id):
-    persona=Persona.objects.get(pk=paciente_id)
+    persona=Persona.objects.get(pk=persona_id)
     persona.delete()
     return render(request, 'persona/index.html', {'msg':'Persona eliminada con éxito'})
 
@@ -63,11 +63,11 @@ def modificar_persona(request, persona_id):
 
 def crear_rasgo_persona(request):
     pass
-
-def crear_comentario_persona(request):
+    
+def eliminar_rasgo(request):
     pass
 
-def eliminar_rasgo(request):
+def crear_comentario_persona(request, persona_id):
     pass
 
 def eliminar_comentario(request, comentario_id):
