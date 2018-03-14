@@ -12,8 +12,11 @@ from .models import Persona, Rasgos, Comentarios, comentariosForm, personaForm, 
 # Create your views here.
 def index(request):
     personas = Persona.objects.all()
+    print(personas)
+    rasgos = Rasgos.objects.all()
     data = {
-        'personas':personas
+        'personas':personas,
+        'rasgos':rasgos,
     }
     template = 'persona/index.html'
     return render(request, template, data)
@@ -25,14 +28,17 @@ Salidas:    Template para la renderizacion del formulario de ingreso de personas
 '''
 def crear_persona(request):
     template = 'persona/index.html'
-    form = personaForm(request.POST, request.FILES)
+    form = personaForm(request.POST, request.FILES)   
     if form.is_valid():
         '''
         Si se recibe el formulario en un POST, se realiza la validacion y el guardado
         del formulario.
         '''
-        persona=form.save(commit=False)
-        return render(request, template, {'msg':'Persona creada con exito'})
+        if request.POST: 
+            persona=form.save(commit=False)
+            persona.save()
+            personas = Persona.objects.all()
+            return render(request, template, {'msg':'Persona creada con exito','personas':personas})
     else:
         print(form._errors)
     context = {
@@ -69,8 +75,15 @@ def crear_rasgo_persona(request):
         Si se recibe el formulario en un POST, se realiza la validacion y el guardado
         del formulario.
         '''
-        rasgos = form.save(commit=False)
-        return render(request, template, {'msg':'Rasgo creado con exito'})
+        if request.POST:
+            rasgos = form.save(commit=False)
+            rasgos.save()
+            data = {
+                'personas':Persona.objects.all(),
+                'rasgos':Rasgos.objects.all(),
+                'msg':'Rasgo creado con exito'
+            }
+            return render(request, template, data)
     else:
         print(form._errors)
     context = {
@@ -101,7 +114,6 @@ def crear_comentario_persona(request, persona_id):
         "form":form,
     }
     return render(request,'persona/form_rasgos.html', context)
-    pass
 
 def eliminar_comentario(request, comentario_id):
     pass
