@@ -1,10 +1,28 @@
-{% extends "base.html" %}
+{% extends "persona/base.html" %}
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
 
 {% block content %}
+<style>
+    div {
+        font-size: x-large;
+    }
+    ::-webkit-input-placeholder { font-size: large; }
+    ::-moz-placeholder { font-size: large; } /* firefox 19+ */
+    :-ms-input-placeholder { font-size: large; } /* ie */
+    input:-moz-placeholder { font-size: large; }
+    
+    input {
+        font-size:large;
+    }
+    .btn {
+        font-size:large;
+        height: 50px;
+        width: 175px;
+    }
+</style>
 <div class="jumbotron text-center">
         <h1>Ingreso de Rasgos</h1>
         <p>Formulario para el ingreso de rasgos</p>
@@ -12,7 +30,7 @@
 <form role="form" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
-        {% buttons submit='OK' reset="Cancel" %}{% endbuttons %}
+        {% buttons submit='Ingresar' reset="Cancelar" %}{% endbuttons %}
     </form>
     
 {% endblock content%}

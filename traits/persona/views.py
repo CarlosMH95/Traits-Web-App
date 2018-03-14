@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Persona, Rasgos, Comentarios, comentariosForm, personaForm
+from .models import Persona, Rasgos, Comentarios, comentariosForm, personaForm, rasgosForm
 
 '''
     Modulo de personas y rasgos
@@ -62,12 +62,45 @@ def modificar_persona(request, persona_id):
     pass
 
 def crear_rasgo_persona(request):
-    pass
+    template = 'persona/index.html'
+    form = rasgosForm(request.POST, request.FILES)
+    if form.is_valid():
+        '''
+        Si se recibe el formulario en un POST, se realiza la validacion y el guardado
+        del formulario.
+        '''
+        rasgos = form.save(commit=False)
+        return render(request, template, {'msg':'Rasgo creado con exito'})
+    else:
+        print(form._errors)
+    context = {
+        "form":form,
+    }
+    return render(request,'persona/form_rasgos.html', context)
     
 def eliminar_rasgo(request):
     pass
 
 def crear_comentario_persona(request, persona_id):
+    template = 'persona/index.html'
+    persona = get_object_or_404(Persona, pk=persona_id)
+    form = comentariosForm(request.POST, request.FILES)
+    if form.is_valid():
+        '''
+        Si se recibe el formulario en un POST, se realiza la validacion y el guardado
+        del formulario.
+        '''
+        
+        rasgos=form.save(commit=False)
+        rasgos.persona = persona
+        rasgos.save()
+        return render(request, template, {'msg':'Rasgo creado con exito'})
+    else:
+        print(form._errors)
+    context = {
+        "form":form,
+    }
+    return render(request,'persona/form_rasgos.html', context)
     pass
 
 def eliminar_comentario(request, comentario_id):

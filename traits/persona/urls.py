@@ -15,6 +15,6 @@ urlpatterns = [
     path('eliminar/<int:comentario_id>/', views_persona.eliminar_comentario),
     path('modificar/comentario/<int:comentario_id>/', views_persona.modificar_comentario),
     #Rasgos
-    path('crear/rasgo/', views_persona.crear_rasgo_persona),
+    path('crear/rasgo/', views_persona.crear_rasgo_persona, name="crear_r"),
     path('eliminar/<int:rasgo_id>/', views_persona.eliminar_rasgo),
 ]

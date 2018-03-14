@@ -18,7 +18,7 @@ class Persona(models.Model):
     direccion = models.CharField(max_length=200)
     fecha_nacimiento = models.DateField()
     fecha_actualizado = models.DateField(auto_now=True)
-    foto = models.ImageField()
+    foto = models.ImageField(blank=True)
 
 #Modelo que manejara los traits
 class Rasgos(models.Model):

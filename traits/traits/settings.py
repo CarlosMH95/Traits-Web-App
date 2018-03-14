@@ -138,7 +138,7 @@ BOOTSTRAP3 = {
     'css_url': None,
 
     # The complete URL to the Bootstrap CSS file (None means no theme)
-    'theme_url': 'https://bootswatch.com/4/sketchy/bootstrap.min.css',
+    'theme_url': 'https://bootswatch.com/4/lux/bootstrap.min.css',
 
     # The complete URL to the Bootstrap JavaScript file (None means derive it from base_url)
     'javascript_url': None,
