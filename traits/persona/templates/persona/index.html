@@ -46,15 +46,7 @@
             <div class="col-sm-4">
                 <h3>Listado de personas</h3>
                 <p>Aqui hay que poner el for de la base para cargar todas las personas y sus imagenes</p>
-                {% if personas %}
-                <div class="list-group">
-                    {% for p in personas %}
-                        <a href="#" class="list-group-item list-group-item-action "><p>{{ p.nombres }} {{ p.apellidos }}</p></a>
-                    {% endfor %}
-                </div>
-                {% endif %}
-                
-                <!-- <div class="container-fluid">
+                {% comment %}<div class="container-fluid">
                     <div class="row">
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead class="thead-inverse">
@@ -86,23 +78,46 @@
                             </tbody>
                         </table>
                     </div>
-                </div> -->
+                </div> -->{% endcomment %}
             </div>
             <div class="col-sm-4">
                 <h3>Listado de Rasgos guardados</h3>
                 <p>Aqui se puede poner la lista de rasgos con un boton para seguir agregando nuevos rasgos o algo asi eh eh eh</p>
-                {% if rasgos %}
-                <div class="list-group">
-                    {% for r in rasgos %}
-                        <a href="#" class="list-group-item list-group-item-action "><p>{{r.nombre}}</p></a>
-                    {% endfor %}
-                </div>
-                {% endif %}
-                
             </div>
             <div class="col-sm-4">
                 <h3>Columna 3 no se que poner</h3>
                 <p>Le pongo un lorem ipsum buenaso por que no se que va a ir en esta Columna</p>
+            </div>
+        </div>
+        <div class ="row">
+            <div class="col-sm-4">
+                {% if personas %}
+                <div class="list-group">
+                    {% for p in personas %}
+                        <a href="#" class="list-group-item list-group-item-action "><p>{{ p.nombres }} {{ p.apellidos }}</p></a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-sm-4">
+                {% if rasgos %}
+                <div class="list-group">
+                    {% for r in rasgos %}
+                        {% if r.tipo == 'POSI'%}
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-success"><p>{{r.nombre}}</p></a>
+                        {% endif %}
+                        {% if r.tipo == 'NEGA'%}
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-danger"><p>{{r.nombre}}</p></a>
+                        {% endif %}
+                        {% if r.tipo == 'NEUT'%}
+                            <a href="#" class="list-group-item list-group-item-action list-group-item-dark"><p>{{r.nombre}}</p></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-sm-4">
+
             </div>
         </div>
             <div class="row">

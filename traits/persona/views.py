@@ -6,7 +6,7 @@ from .models import Persona, Rasgos, Comentarios, comentariosForm, personaForm, 
 
     Version 0.1.0
 
-    Actualizado 08/03/2018
+    Actualizado 15/03/2018
 
 '''
 # Create your views here.
@@ -38,7 +38,12 @@ def crear_persona(request):
             persona=form.save(commit=False)
             persona.save()
             personas = Persona.objects.all()
-            return render(request, template, {'msg':'Persona creada con exito','personas':personas})
+            data = {
+                'personas':Persona.objects.all(),
+                'rasgos':Rasgos.objects.all(),
+                'msg':'Persona creada con exito',
+            }
+            return render(request, template, data)
     else:
         print(form._errors)
     context = {
@@ -103,11 +108,16 @@ def crear_comentario_persona(request, persona_id):
         Si se recibe el formulario en un POST, se realiza la validacion y el guardado
         del formulario.
         '''
-        
-        rasgos=form.save(commit=False)
-        rasgos.persona = persona
-        rasgos.save()
-        return render(request, template, {'msg':'Rasgo creado con exito'})
+        if request.POST:
+            comentarios=form.save(commit=False)
+            comentarios.persona = persona
+            comentarios.save()
+            data = {
+                'personas':Persona.objects.all(),
+                'rasgos':Rasgos.objects.all(),
+                'msg':'Comentario creado con exito'
+            }
+            return render(request, template, data)
     else:
         print(form._errors)
     context = {
@@ -123,4 +133,3 @@ def info_comentario(request, comentario_id):
 
 def modificar_comentario(request, comentario_id):
     pass
-
